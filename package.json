@@ -1,0 +1,25 @@
+{
+  "name": "cmedina-blog",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "Perro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Truexxangusxx/cmedinacblog.git"
+  },
+  "author": "carlos medina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Truexxangusxx/cmedinacblog/issues"
+  },
+  "homepage": "https://github.com/Truexxangusxx/cmedinacblog#readme",
+  "dependencies": {
+    "audio-context": "^0.1.0",
+    "audio-loader": "^0.6.0",
+    "audio-play": "^2.1.0"
+  }
+}
