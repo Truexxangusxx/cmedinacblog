@@ -1,24 +1,21 @@
-var fs = require("fs");
-var Perro = require("./Perro");
+var http = require("http");
 
-console.log("hola");
-fs.readFile("README.txt","utf-8", function(err,data){
-    if(err){
-        return console.error(err);
-    }
+var callback = function(request, response){
+    console.log(request);
 
-    console.log(data);
-});
+    response.writeHead(200, {
+        "Content-Type" : "text/html"
+    });
 
-console.log("carlos");
+    var fs = require("fs");
+    fs.readFile("index.html", "utf-8", function(err, data){
+        if(err) return response.writeHead(500);
+        response.write(data);
+        response.end();
+    });
+    
+};
 
-var perro=new Perro("");
-perro.mover("cola",function(error, data1, data2, data3, data4){
-    if(error){
-        console.log(error.message);
-        return;
-    }
-    else{
-        console.log(data1, data2, data3, data4);
-    }
-});
+var server = http.createServer(callback);
+
+server.listen(3000);
